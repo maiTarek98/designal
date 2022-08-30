@@ -1,0 +1,1158 @@
+{
+	"info": {
+		"_postman_id": "a92b99b3-9711-4f90-8603-e82521a7889c",
+		"name": "Mrmr App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11728336"
+	},
+	"item": [
+		{
+			"name": "User Auth",
+			"item": [
+				{
+					"name": "get countrys",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://mrmrapp.com/mrmr/public/api/get_countrys",
+							"protocol": "https",
+							"host": [
+								"mrmrapp",
+								"com"
+							],
+							"path": [
+								"mrmr",
+								"public",
+								"api",
+								"get_countrys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "ahmed121",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "ae12@yahoo.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "ahmed@123",
+									"type": "text"
+								},
+								{
+									"key": "birthdate",
+									"value": "1999-08-09",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"description": "male or female",
+									"type": "text"
+								},
+								{
+									"key": "terms",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "user",
+									"description": "'user','vendor','shopper'",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://mrmrapp.com/mrmr/public/api/register",
+							"protocol": "https",
+							"host": [
+								"mrmrapp",
+								"com"
+							],
+							"path": [
+								"mrmr",
+								"public",
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L21ybXIvcHVibGljL2FwaS9sb2dpbiIsImlhdCI6MTY2MDEzMTAyOSwiZXhwIjoxNjYwMTM0NjI5LCJuYmYiOjE2NjAxMzEwMjksImp0aSI6IjhIMTNZNFFuUmVSWUVuNXQiLCJzdWIiOiIxIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.zM-h8Gnt-OKUatbSKVMtbk9DLZRyYQJJSpHEdrllO-I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "ahmed121",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "ahmed@yahoo.comd",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "birthdate",
+									"value": "2029-09-09",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"description": "male or female",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://mrmrapp.com/mrmr/public/api/update_profile",
+							"protocol": "https",
+							"host": [
+								"mrmrapp",
+								"com"
+							],
+							"path": [
+								"mrmr",
+								"public",
+								"api",
+								"update_profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "ahmed1212@yahoo.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "ahmed@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://mrmrapp.com/mrmr/public/api/login",
+							"protocol": "https",
+							"host": [
+								"mrmrapp",
+								"com"
+							],
+							"path": [
+								"mrmr",
+								"public",
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "use profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL21ybXJhcHAuY29tL21ybXIvcHVibGljL2FwaS9sb2dpbiIsImlhdCI6MTY2MDQ2NTg5NSwiZXhwIjoxNjYwNDY5NDk1LCJuYmYiOjE2NjA0NjU4OTUsImp0aSI6Im5YMzl2UlY4dU9OSTcwcEEiLCJzdWIiOiI0IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.BCrWa7rgP_36-tqrQqQpRQwXDj7HUjV-4_27C95gusQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "ahmed@yahoo.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "ahmed@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://mrmrapp.com/mrmr/public/api/profile",
+							"protocol": "https",
+							"host": [
+								"mrmrapp",
+								"com"
+							],
+							"path": [
+								"mrmr",
+								"public",
+								"api",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L21ybXIvcHVibGljL2FwaS9sb2dpbiIsImlhdCI6MTY2MDA1MDM3NCwiZXhwIjoxNjYwMDUzOTc0LCJuYmYiOjE2NjAwNTAzNzQsImp0aSI6InFyY1lmeFRPMWVPR3B0bjkiLCJzdWIiOiIxIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.gPsXg1hO67H0HffTk03WtcdrF10caqvdoLXGZay2rP0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://mrmrapp.com/mrmr/public/api/logout",
+							"protocol": "https",
+							"host": [
+								"mrmrapp",
+								"com"
+							],
+							"path": [
+								"mrmr",
+								"public",
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Drawer",
+			"item": [
+				{
+					"name": "get terms conditions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://mrmrapp.com/mrmr/public/api/term_conditions",
+							"protocol": "https",
+							"host": [
+								"mrmrapp",
+								"com"
+							],
+							"path": [
+								"mrmr",
+								"public",
+								"api",
+								"term_conditions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get privacy policys",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://mrmrapp.com/mrmr/public/api/privacy_policys",
+							"protocol": "https",
+							"host": [
+								"mrmrapp",
+								"com"
+							],
+							"path": [
+								"mrmr",
+								"public",
+								"api",
+								"privacy_policys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "settings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://mrmrapp.com/mrmr/public/api/settings",
+							"protocol": "https",
+							"host": [
+								"mrmrapp",
+								"com"
+							],
+							"path": [
+								"mrmr",
+								"public",
+								"api",
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get common questions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://mrmrapp.com/mrmr/public/api/common_questions",
+							"protocol": "https",
+							"host": [
+								"mrmrapp",
+								"com"
+							],
+							"path": [
+								"mrmr",
+								"public",
+								"api",
+								"common_questions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store contact",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL21ybXJhcHAuY29tL21ybXIvcHVibGljL2FwaS9sb2dpbiIsImlhdCI6MTY2MDQ2NTg5NSwiZXhwIjoxNjYwNDY5NDk1LCJuYmYiOjE2NjA0NjU4OTUsImp0aSI6Im5YMzl2UlY4dU9OSTcwcEEiLCJzdWIiOiI0IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.BCrWa7rgP_36-tqrQqQpRQwXDj7HUjV-4_27C95gusQ",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "muahamed",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "966568063861",
+									"type": "text"
+								},
+								{
+									"key": "subject",
+									"value": "suggestion",
+									"description": "'complain','suggestion','inquiry','other'",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "i need to leave a small suggestion",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://mrmrapp.com/mrmr/public/api/store_contact",
+							"protocol": "https",
+							"host": [
+								"mrmrapp",
+								"com"
+							],
+							"path": [
+								"mrmr",
+								"public",
+								"api",
+								"store_contact"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Home",
+			"item": [
+				{
+					"name": "get all categorys",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://mrmrapp.com/mrmr/public/api/all_categorys",
+							"protocol": "https",
+							"host": [
+								"mrmrapp",
+								"com"
+							],
+							"path": [
+								"mrmr",
+								"public",
+								"api",
+								"all_categorys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all coupons",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L21ybXIvcHVibGljL2FwaS9sb2dpbiIsImlhdCI6MTY2MDQ2MzcxMSwiZXhwIjoxNjYwNDY3MzExLCJuYmYiOjE2NjA0NjM3MTEsImp0aSI6IkpHblRmajNxelpZYllwODUiLCJzdWIiOiI0IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.XuXnVcfz3viRcPxtFGJDoWkcbJNxrdzqg9J0jhWGo6s",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://mrmrapp.com/mrmr/public/api/all_coupons",
+							"protocol": "https",
+							"host": [
+								"mrmrapp",
+								"com"
+							],
+							"path": [
+								"mrmr",
+								"public",
+								"api",
+								"all_coupons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filter coupons by category id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L21ybXIvcHVibGljL2FwaS9sb2dpbiIsImlhdCI6MTY2MDQ2MzcxMSwiZXhwIjoxNjYwNDY3MzExLCJuYmYiOjE2NjA0NjM3MTEsImp0aSI6IkpHblRmajNxelpZYllwODUiLCJzdWIiOiI0IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.XuXnVcfz3viRcPxtFGJDoWkcbJNxrdzqg9J0jhWGo6s",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://mrmrapp.com/mrmr/public/api/filter_coupon?category_id=1",
+							"protocol": "https",
+							"host": [
+								"mrmrapp",
+								"com"
+							],
+							"path": [
+								"mrmr",
+								"public",
+								"api",
+								"filter_coupon"
+							],
+							"query": [
+								{
+									"key": "category_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Coupons Module",
+			"item": [
+				{
+					"name": "Store new coupon",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL21ybXJhcHAuY29tL21ybXIvcHVibGljL2FwaS9sb2dpbiIsImlhdCI6MTY2MDQ2NTg5NSwiZXhwIjoxNjYwNDY5NDk1LCJuYmYiOjE2NjA0NjU4OTUsImp0aSI6Im5YMzl2UlY4dU9OSTcwcEEiLCJzdWIiOiI0IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.BCrWa7rgP_36-tqrQqQpRQwXDj7HUjV-4_27C95gusQ",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "multipart/form-data",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "store_name",
+									"value": "max ",
+									"type": "text"
+								},
+								{
+									"key": "store_link",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "store_flag",
+									"type": "file",
+									"src": "/C:/Users/smart vision/Downloads/Asset 1.png"
+								},
+								{
+									"key": "category_id",
+									"value": "1,3,2",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "new cairo",
+									"type": "text"
+								},
+								{
+									"key": "details",
+									"value": "none",
+									"type": "text"
+								},
+								{
+									"key": "commercial_registration_no",
+									"value": "0233839822",
+									"type": "text"
+								},
+								{
+									"key": "coupon_discount",
+									"value": "15",
+									"description": "%",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://mrmrapp.com/mrmr/public/api/store_coupon",
+							"protocol": "https",
+							"host": [
+								"mrmrapp",
+								"com"
+							],
+							"path": [
+								"mrmr",
+								"public",
+								"api",
+								"store_coupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add coupon to wishlist",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL21ybXJhcHAuY29tL21ybXIvcHVibGljL2FwaS9sb2dpbiIsImlhdCI6MTY2MDQ2NTg5NSwiZXhwIjoxNjYwNDY5NDk1LCJuYmYiOjE2NjA0NjU4OTUsImp0aSI6Im5YMzl2UlY4dU9OSTcwcEEiLCJzdWIiOiI0IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.BCrWa7rgP_36-tqrQqQpRQwXDj7HUjV-4_27C95gusQ",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "multipart/form-data",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "store_name",
+									"value": "max ",
+									"type": "text"
+								},
+								{
+									"key": "store_link",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "store_flag",
+									"type": "file",
+									"src": "/C:/Users/smart vision/Downloads/Asset 1.png"
+								},
+								{
+									"key": "category_id",
+									"value": "1,3,2",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "new cairo",
+									"type": "text"
+								},
+								{
+									"key": "details",
+									"value": "none",
+									"type": "text"
+								},
+								{
+									"key": "commercial_registration_no",
+									"value": "0233839822",
+									"type": "text"
+								},
+								{
+									"key": "coupon_discount",
+									"value": "15",
+									"description": "%",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://mrmrapp.com/mrmr/public/api/add_coupon_wishlist/48",
+							"protocol": "https",
+							"host": [
+								"mrmrapp",
+								"com"
+							],
+							"path": [
+								"mrmr",
+								"public",
+								"api",
+								"add_coupon_wishlist",
+								"48"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete coupon from wishlist",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL21ybXJhcHAuY29tL21ybXIvcHVibGljL2FwaS9sb2dpbiIsImlhdCI6MTY2MDQ2NTg5NSwiZXhwIjoxNjYwNDY5NDk1LCJuYmYiOjE2NjA0NjU4OTUsImp0aSI6Im5YMzl2UlY4dU9OSTcwcEEiLCJzdWIiOiI0IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.BCrWa7rgP_36-tqrQqQpRQwXDj7HUjV-4_27C95gusQ",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "multipart/form-data",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "store_name",
+									"value": "max ",
+									"type": "text"
+								},
+								{
+									"key": "store_link",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "store_flag",
+									"type": "file",
+									"src": "/C:/Users/smart vision/Downloads/Asset 1.png"
+								},
+								{
+									"key": "category_id",
+									"value": "1,3,2",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "new cairo",
+									"type": "text"
+								},
+								{
+									"key": "details",
+									"value": "none",
+									"type": "text"
+								},
+								{
+									"key": "commercial_registration_no",
+									"value": "0233839822",
+									"type": "text"
+								},
+								{
+									"key": "coupon_discount",
+									"value": "15",
+									"description": "%",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://mrmrapp.com/mrmr/public/api/del_wishlist_coupon/2",
+							"protocol": "https",
+							"host": [
+								"mrmrapp",
+								"com"
+							],
+							"path": [
+								"mrmr",
+								"public",
+								"api",
+								"del_wishlist_coupon",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete coupon from likes",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L21ybXIvcHVibGljL2FwaS9sb2dpbiIsImlhdCI6MTY2MDIyNzU3NiwiZXhwIjoxNjYwMjMxMTc2LCJuYmYiOjE2NjAyMjc1NzYsImp0aSI6ImV6bUcxRU02bWdkcVAyWm4iLCJzdWIiOiIxIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.tKi49kw_lkfrwfDMwENYlL6jyvrKEqTEbcqbSO82vSU",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "multipart/form-data",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "store_name",
+									"value": "max ",
+									"type": "text"
+								},
+								{
+									"key": "store_link",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "store_flag",
+									"type": "file",
+									"src": "/C:/Users/smart vision/Downloads/Asset 1.png"
+								},
+								{
+									"key": "category_id",
+									"value": "1,3,2",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "new cairo",
+									"type": "text"
+								},
+								{
+									"key": "details",
+									"value": "none",
+									"type": "text"
+								},
+								{
+									"key": "commercial_registration_no",
+									"value": "0233839822",
+									"type": "text"
+								},
+								{
+									"key": "coupon_discount",
+									"value": "15",
+									"description": "%",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://mrmrapp.com/mrmr/public/api/del_like_coupon/2",
+							"protocol": "https",
+							"host": [
+								"mrmrapp",
+								"com"
+							],
+							"path": [
+								"mrmr",
+								"public",
+								"api",
+								"del_like_coupon",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show user wishlist",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL21ybXJhcHAuY29tL21ybXIvcHVibGljL2FwaS9sb2dpbiIsImlhdCI6MTY2MDQ2NTg5NSwiZXhwIjoxNjYwNDY5NDk1LCJuYmYiOjE2NjA0NjU4OTUsImp0aSI6Im5YMzl2UlY4dU9OSTcwcEEiLCJzdWIiOiI0IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.BCrWa7rgP_36-tqrQqQpRQwXDj7HUjV-4_27C95gusQ",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "multipart/form-data",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "store_name",
+									"value": "max ",
+									"type": "text"
+								},
+								{
+									"key": "store_link",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "store_flag",
+									"type": "file",
+									"src": "/C:/Users/smart vision/Downloads/Asset 1.png"
+								},
+								{
+									"key": "category_id",
+									"value": "1,3,2",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "new cairo",
+									"type": "text"
+								},
+								{
+									"key": "details",
+									"value": "none",
+									"type": "text"
+								},
+								{
+									"key": "commercial_registration_no",
+									"value": "0233839822",
+									"type": "text"
+								},
+								{
+									"key": "coupon_discount",
+									"value": "15",
+									"description": "%",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://mrmrapp.com/mrmr/public/api/show_wishlist",
+							"protocol": "https",
+							"host": [
+								"mrmrapp",
+								"com"
+							],
+							"path": [
+								"mrmr",
+								"public",
+								"api",
+								"show_wishlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add coupon to likes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL21ybXJhcHAuY29tL21ybXIvcHVibGljL2FwaS9sb2dpbiIsImlhdCI6MTY2MDQ2NTg5NSwiZXhwIjoxNjYwNDY5NDk1LCJuYmYiOjE2NjA0NjU4OTUsImp0aSI6Im5YMzl2UlY4dU9OSTcwcEEiLCJzdWIiOiI0IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.BCrWa7rgP_36-tqrQqQpRQwXDj7HUjV-4_27C95gusQ",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "multipart/form-data",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "store_name",
+									"value": "max ",
+									"type": "text"
+								},
+								{
+									"key": "store_link",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "store_flag",
+									"type": "file",
+									"src": "/C:/Users/smart vision/Downloads/Asset 1.png"
+								},
+								{
+									"key": "category_id",
+									"value": "1,3,2",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "new cairo",
+									"type": "text"
+								},
+								{
+									"key": "details",
+									"value": "none",
+									"type": "text"
+								},
+								{
+									"key": "commercial_registration_no",
+									"value": "0233839822",
+									"type": "text"
+								},
+								{
+									"key": "coupon_discount",
+									"value": "15",
+									"description": "%",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://mrmrapp.com/mrmr/public/api/like_coupon/48",
+							"protocol": "https",
+							"host": [
+								"mrmrapp",
+								"com"
+							],
+							"path": [
+								"mrmr",
+								"public",
+								"api",
+								"like_coupon",
+								"48"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show user coupons",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL21ybXJhcHAuY29tL21ybXIvcHVibGljL2FwaS9sb2dpbiIsImlhdCI6MTY2MDQ2NTg5NSwiZXhwIjoxNjYwNDY5NDk1LCJuYmYiOjE2NjA0NjU4OTUsImp0aSI6Im5YMzl2UlY4dU9OSTcwcEEiLCJzdWIiOiI0IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.BCrWa7rgP_36-tqrQqQpRQwXDj7HUjV-4_27C95gusQ",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "multipart/form-data",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://mrmrapp.com/mrmr/public/api/get_coupons",
+							"protocol": "https",
+							"host": [
+								"mrmrapp",
+								"com"
+							],
+							"path": [
+								"mrmr",
+								"public",
+								"api",
+								"get_coupons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show single coupon",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL21ybXJhcHAuY29tL21ybXIvcHVibGljL2FwaS9sb2dpbiIsImlhdCI6MTY2MDQ2NTg5NSwiZXhwIjoxNjYwNDY5NDk1LCJuYmYiOjE2NjA0NjU4OTUsImp0aSI6Im5YMzl2UlY4dU9OSTcwcEEiLCJzdWIiOiI0IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.BCrWa7rgP_36-tqrQqQpRQwXDj7HUjV-4_27C95gusQ",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "multipart/form-data",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://mrmrapp.com/mrmr/public/api/single_coupon?id=48",
+							"protocol": "https",
+							"host": [
+								"mrmrapp",
+								"com"
+							],
+							"path": [
+								"mrmr",
+								"public",
+								"api",
+								"single_coupon"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "48"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
