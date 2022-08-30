@@ -1,146 +1,64 @@
-@extends('admin.index')
+@extends('site.index')
 @section('content')
-<!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">@lang('main.dashboard')</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
+   
+  @include('site.partial.service_section')
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-        <div class="row">
-          <div class="col-md-3 col-sm-6 col-12">
-            <div class="info-box">
-              <span class="info-box-icon bg-info"><i class="fa fa-users"></i></span>
+  <!-- about section -->
+    @include('site.partial.aboutus_section')
 
-              <div class="info-box-content">
-                <span class="info-box-text">@lang('main.adminsCount')</span>
-                <span class="info-box-number">{{$adminsCount}}</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </div>
+  <!-- end about section -->
 
-          <div class="col-md-3 col-sm-6 col-12">
-            <div class="info-box">
-              <span class="info-box-icon bg-success"><i class="fa fa-gift"></i></span>
+  <!-- portfolio section -->
+@include('site.partial.portfolio_section')
+  
 
-              <div class="info-box-content">
-                <span class="info-box-text">@lang('main.couponsCount')</span>
-                <span class="info-box-number">{{$usersCount}}</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </div>
+  <!-- end portfolio section -->
 
-          <div class="col-md-3 col-sm-6 col-12">
-            <div class="info-box">
-              <span class="info-box-icon bg-warning"><i class="fa fa-users"></i></span>
+  <!-- client section -->
 
-              <div class="info-box-content">
-                <span class="info-box-text">@lang('main.usersCount')</span>
-                <span class="info-box-number">{{$usersCount}}</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </div>
-          <div class="col-md-3 col-sm-6 col-12">
-            <div class="info-box">
-              <span class="info-box-icon bg-danger"><i class="fa fa-list-alt"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">@lang('main.categorysCount')</span>
-                <span class="info-box-number">{{$categorysCount}}</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </div>
-
-        </div>
-        <!-- /.row -->
-        <!-- Main row -->
-        <div class="row">
-          <!-- Left col -->
-          <section class="col-lg-7 connectedSortable">
-            <!-- Custom tabs (Charts with tabs)-->
-            <div class="card">
-              <div class="card-header d-flex p-0" style="background: white;">
-                <h2 class="card-title p-3">
-                  <i class="fas fa-chart-pie mr-1"></i>
-                  
-                </h2>
-                <div class="card-body" style="width: 80%;margin: 0 auto;">
-            {!! $usersChart->container() !!}
+  <section class="client_section">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          What says our <span>Clients</span>
+        </h2>
+      </div>
+      <div class="carousel-wrap ">
+        <div class="owl-carousel client_owl-carousel">
+          @foreach($client_reviews as $value)
+          <div class="item">
+            <div class="box">
+              <div class="client_id">
+                <div class="img-box">
+                  <img src="{{$value->getFirstMediaUrl('user_image', 'thumb')}}" alt="{{$value->name}}" class="box-img">
                 </div>
-            </div>
-            <!-- /.card -->
-          </section>
-          <!-- /.Left col -->
-          <!-- right col (We are only adding the ID to make the widgets sortable)-->
-          <section class="col-lg-5 connectedSortable">
-
-            <!-- Map card -->
-            <div class="card bg-gradient-primary">
-              <div class="card-header border-0">
-                <h5 class="">
-                  <i class="fas fa-map-marker-alt ml-1"></i>
-                  @lang('main.visitors')
+                <h5>
+                  {{$value->name}}
                 </h5>
-              <div class="card-body bg-transparent">
-                <div class="row"> 
-                  <div class="col-md-12">
-                  <table class="table table-bordered">
-                    <thead>
-                      <th>#</th>
-                      <th>@lang('main.country_name')</th>
-                      <th>@lang('main.city_name')</th>
-                    </thead>
-                    <tbody>
-                      @foreach($admin_ip as $key => $val)
-                      @if($val != false)
-                      <tr>
-                        <td>{{$key+1}}</td>
-                        <td>{{$val->countryName}}</td>
-                        <td>{{$val->cityName}}</td>
-                      </tr>
-                      @endif
-                      @endforeach
-                    </tbody>
-                  </table>
-                  </div>
-                </div>
-                <!-- /.row -->
+              </div>
+              <div class="detail-box">
+                <p>
+                  {{$value->review}}
+                </p>
+                <h6 class="rating">
+                  @for($i=0; $i<$value->no_star; $i++)
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  @endfor
+                </h6>
               </div>
             </div>
           </div>
-          </section>
-            <!-- TABLE: LATEST ORDERS -->
-          <!-- right col -->
+          @endforeach
         </div>
-        <!-- /.row (main row) -->
-      </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+      </div>
+    </div>
+  </section>
 
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
-        {!! $usersChart->script() !!}
+  <!-- end client section -->
 
+  <!-- contact section -->
+    @include('site.partial.contact_section')
+
+  
+  <!-- end contact section -->
 @endsection

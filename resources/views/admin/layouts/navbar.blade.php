@@ -9,13 +9,13 @@
       <li class="nav-item d-none d-sm-inline-block">
     <a href="{{url('/admin/adminLogout')}}" class="nav-link"><i class="fas fa-sign-out"></i>@lang('main.logout')</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
+<!--       <li class="nav-item d-none d-sm-inline-block">
       <select onchange="changeLanguage(this.value)"  class="form-control">
             <option {{session()->has('lang_code')?(session()->get('lang_code')=='ar'?'selected':''):''}} value="ar">Arabic</option>
             <option {{session()->has('lang_code')?(session()->get('lang_code')=='en'?'selected':''):''}} value="en">English</option>
         </select>
       </li>
-    </ul>
+ -->    </ul>
     <!-- Right navbar links -->
     <ul class="navbar-nav mr-auto-navbav">
       <!-- Messages Dropdown Menu -->

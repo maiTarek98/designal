@@ -24,6 +24,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-            Paginator::useBootstrap();
+        Paginator::useBootstrap();
+        
+        view()->composer('*', function ($view)
+        {
+
+            $services = \App\Models\Service::where('status','show')->get();
+            $portfolios = \App\Models\Portfolio::where('status','show')->get();
+
+            $view->with(compact('services','portfolios'));
+        
+        });
     }
 }

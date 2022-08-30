@@ -1,114 +1,95 @@
+<div class="hero_area">
 
-  <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-    <a href="{{url('/admin/adminLogout')}}" class="nav-link"><i class="fas fa-sign-out"></i>@lang('main.logout')</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-      <select onchange="changeLanguage(this.value)"  class="form-control">
-            <option {{session()->has('lang_code')?(session()->get('lang_code')=='ar'?'selected':''):''}} value="ar">Arabic</option>
-            <option {{session()->has('lang_code')?(session()->get('lang_code')=='en'?'selected':''):''}} value="en">English</option>
-        </select>
-      </li>
-    </ul>
-    <!-- Right navbar links -->
-    <ul class="navbar-nav mr-auto-navbav">
-      <!-- Messages Dropdown Menu -->
-     <!--  <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-comments"></i>
-          <span class="badge badge-danger navbar-badge">3</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <a href="#" class="dropdown-item">
-            <div class="media">
-              <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  Brad Diesel
-                  <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                </h3>
-                <p class="text-sm">Call me whenever you can...</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+    <div class="hero_bg_box">
+      <img src="{{url('site')}}/images/hero-bg.png" alt="">
+    </div>
+
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              {{app(App\Models\GeneralSettings::class)->site_name}}
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ">
+              <li class="nav-item ">
+                <a class="nav-link" href="{{url('/')}}">Home </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url('about-us')}}"> About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url('services')}}">Services</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="{{url('portfolio')}}">Portfolio <span class="sr-only">(current)</span> </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url('contact-us')}}">Contact Us</a>
+              </li>
+              <!-- <form class="form-inline">
+                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </form> -->
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+     @if (url()->current() == url('/') )
+
+    <!-- slider section -->
+    <section class="slider_section ">
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          @foreach($sliders as $key => $value)
+          <div class="carousel-item @if($key == 0) active @endif">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6 ">
+                  <div class="detail-box">
+                    <h1>
+                      {{$value->title}}
+                    </h1>
+                    <p>
+                      {{$value->description}}
+                    </p>
+                    <div class="btn-box">
+                      <a href="" class="btn1">
+                        Read More
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{{$value->getFirstMediaUrl('slider_image', 'thumb')}}" alt="{{$value->title}}">
+                  </div>
+                </div>
               </div>
             </div>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <div class="media">
-              <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  John Pierce
-                  <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
-                </h3>
-                <p class="text-sm">I got your message bro</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <div class="media">
-              <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  Nora Silvester
-                  <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                </h3>
-                <p class="text-sm">The subject goes here</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-        </div>
-      </li> -->
-      <!-- Notifications Dropdown Menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge">{{Auth::guard('admin')->user()->notifications->count()}}</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-item dropdown-header">{{Auth::guard('admin')->user()->notifications->count()}} Notifications</span>
-          @foreach(Auth::guard('admin')->user()->notifications as $note)  
-          @if($note->type == 'App\Notifications\NotifyNewCouponNotification')
-          <div class="dropdown-divider"></div>
-          <a href="{{url('/admin')}}/coupons/{{$note->data['data']['coupon_id']}}" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i>{{$note->data['title']}}
-            <span class="float-right text-muted text-sm"> @php 
-                            $now = \Carbon\Carbon::now();
-                            $created= $note->created_at;
-                            $x= $created->diffForHumans($now);
-                            echo $x;
-                            @endphp</span>
-          </a>
-          @endif
-          @if($note->type == 'App\Notifications\NotifyUserContactNotification')
-          <div class="dropdown-divider"></div>
-          <a href="{{url('/admin')}}/contacts/{{$note->data['data']['id']}}" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i>{{$note->data['title']}}
-            <span class="float-right text-muted text-sm"> @php 
-                            $now = \Carbon\Carbon::now();
-                            $created= $note->created_at;
-                            $x= $created->diffForHumans($now);
-                            echo $x;
-                            @endphp</span>
-          </a>
-          @endif
+          </div>
           @endforeach
-          <div class="dropdown-divider"></div>
-          <a href="{{url('/admin/notifications')}}" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
-      </li>
-     
-    </ul>
-  </nav>
-  <!-- /.navbar -->
+        <ol class="carousel-indicators">
+          @foreach($sliders as $key => $value)
+          <li data-target="#customCarousel{{$key+1}}" data-slide-to="{{$key}}" @if($key == 0)  class="active" @endif></li>
+          @endforeach
+        </ol>
+      </div>
+
+    </section>
+    <!-- end slider section -->
+
+    @endif
+  </div>

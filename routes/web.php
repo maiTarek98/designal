@@ -16,9 +16,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Site\HomeController;
 Route::group(['middleware' => 'lang'], function () {
 
-Route::get('/', function(){
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/portfolio', [HomeController::class, 'portfolio']);
+Route::get('/about-us', [HomeController::class, 'about_us']);
+Route::get('/services', [HomeController::class, 'services']);
+Route::get('/contact-us', [HomeController::class, 'contact_us']);
+Route::post('/storeContact', [HomeController::class, 'storeContact'])->name('storeContact');
+
+Route::post('/storeSubscribe', [HomeController::class, 'storeSubscribe'])->name('storeSubscribe');
+
 
 Route::get('/clear-cache', function() {
     $exitCode = Artisan::call('cache:clear');

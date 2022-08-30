@@ -11,6 +11,7 @@ use App\Http\Controllers\Dashboard\SubscribesController;
 use App\Http\Controllers\Dashboard\ContactUsController;
 use App\Http\Controllers\Dashboard\PortfoliosController;
 use App\Http\Controllers\Dashboard\UsersController;
+use App\Http\Controllers\Dashboard\ClientReviewsController;
 
 Route::get('/change-language/{lang}', [HomeController::class,'changeLang']);
 
@@ -43,5 +44,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'lang'], function () {
         Route::resource('/sliders', SlidersController::class);
         Route::resource('/services', ServicesController::class);
         Route::resource('/users', UsersController::class);
+        Route::resource('/client_reviews', ClientReviewsController::class);
+
+        
     });
 });
